@@ -1,4 +1,5 @@
 import io
+import os
 import json
 import requests
 import pytesseract
@@ -54,4 +55,5 @@ async def call_post():
     return post_stories_to_blog()
 
 if __name__ == '__main__':
-    app.run()
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=True)
