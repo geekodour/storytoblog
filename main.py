@@ -53,4 +53,5 @@ def post_stories_to_blog():
 async def call_post():
     return post_stories_to_blog()
 
-app.run()
+if __name__ == '__main__':
+    app.run()
