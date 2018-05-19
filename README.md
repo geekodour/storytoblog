@@ -1,5 +1,4 @@
 # storytoblog
-kyu? aise hi sexi lag raha tha.
 
 ## ENV VARS
 
