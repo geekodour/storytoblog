@@ -36,16 +36,16 @@ def post_stories_to_blog():
         if blogtest == '@@':
             text = text[2:].strip()
             if text[0] == '#':
-                title = '# %s' % text[1:].partition('\n')[0]
+                title = text[1:].partition('\n')[0]
                 text = text[len(title)+1:]
             else:
-                title = '# %s' % text.partition('\n')[0]
+                title = text.partition('\n')[0]
             issue_body = {
                 "title": title,
                 "body": text,
                 "labels": ["instagram"]
             }
-            u = requests.post(GITHUB_API_URL, data=json.dumps(issue_body))
+            requests.post(GITHUB_API_URL, data=json.dumps(issue_body))
     return json.dumps('OK')
 
 
