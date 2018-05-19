@@ -37,7 +37,7 @@ def post_stories_to_blog():
             text = text[2:].strip()
             if text[0] == '#':
                 title = '# %s' % text[1:].partition('\n')[0]
-                text = text[1:len(title)]
+                text = text[len(title)+1:]
             else:
                 title = '# %s' % text.partition('\n')[0]
             issue_body = {
