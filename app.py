@@ -46,8 +46,7 @@ def post_stories_to_blog():
                 "labels": ["instagram"]
             }
             u = requests.post(GITHUB_API_URL, data=json.dumps(issue_body))
-            print(u.text)
-    return 'OK'
+    return json.dumps('OK')
 
 
 @app.route('/')
@@ -55,5 +54,6 @@ async def call_post():
     return post_stories_to_blog()
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port, debug=True)
+    #port = int(os.environ.get('PORT', 5000))
+    app.run()
+    #app.run(host='0.0.0.0', port=port, debug=True)
